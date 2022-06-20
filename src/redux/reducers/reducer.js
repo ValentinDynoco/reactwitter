@@ -4,7 +4,7 @@ const initialState = {
         userName : 'Tim Tom',
         userAt : 'timtom',
         commentaire : 'Vivement les vacances sérieux...',
-        date : new Date()
+        likes : 0,        date : new Date()
     }], // Les différents tweets qui seront ajoutés
     utilisateurs : [],
     tendances : ['Paris', 'Président', 'Réchauffement Climatique', 'Pokémon', 'Estrillon'] // Les tendances qui apparaitront dans la colonne

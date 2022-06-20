@@ -75,7 +75,6 @@
       padding-left : 0;
 
       li {
-
         list-style-type: none;
         border-bottom : 1px solid rgba(255,255,255,0.25);
 
@@ -85,6 +84,7 @@
           font-weight: bold;
           color: white;
           margin-bottom: 5px;
+          margin-top: 15px;
 
           .user_at{
             font-weight: lighter;
@@ -106,7 +106,7 @@
         .footer_tweet{
           display: flex;
           justify-content: space-around;
-          margin-bottom:5px;
+          margin-bottom:15px;
 
           div {
             font-weight: lighter;
