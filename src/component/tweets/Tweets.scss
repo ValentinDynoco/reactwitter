@@ -68,4 +68,52 @@
       }
     }
   }
+
+  .liste_tweets{
+    ul {
+      margin-left : 0;
+      padding-left : 0;
+
+      li {
+
+        list-style-type: none;
+        border-bottom : 1px solid rgba(255,255,255,0.25);
+
+
+        .userName_tweet{
+          margin-left : 10px;
+          font-weight: bold;
+          color: white;
+          margin-bottom: 5px;
+
+          .user_at{
+            font-weight: lighter;
+            color : rgba(240, 240, 240, 0.5);
+
+            .date_tweet {
+              font-size: 14px;
+            }
+          }
+        }
+
+        .commentaire_tweet{
+          margin-left : 10px;
+          margin-bottom:20px;
+          font-weight: lighter;
+          font-size: 15px;
+        }
+
+        .footer_tweet{
+          display: flex;
+          justify-content: space-around;
+          margin-bottom:5px;
+
+          div {
+            font-weight: lighter;
+            color : rgba(240, 240, 240, 0.5);
+          }
+        }
+      }
+    }
+  }
 }

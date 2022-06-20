@@ -7,13 +7,31 @@ const ConnectedListeTweets = ({ tweets }) => {
     });
 
     const listeTweets = sortedTweets.map((item, index) => {
+        let formatted_date = item.date.getDate() + "-" + (item.date.getMonth() + 1) + "-" + item.date.getFullYear()
+
+
         return (
             <li key={item.id}>
-                {item.commentaire}
+                <div className={'userName_tweet'}>
+                    {item.userName} <span className={'user_at'}>@{item.userAt} . <span className={'date_tweet'}>{formatted_date}</span></span>
+                </div>
+                <div className={'commentaire_tweet'}>
+                    {item.commentaire}
+                </div>
+                <div className={'footer_tweet'}>
+                    <div>
+                        commentaire 0
+                    </div>
+                    <div>
+                        likes {item.likes}
+                    </div>
+                    <div>
+                        retweet 0
+                    </div>
+                </div>
             </li>
         )
     })
-
 
     return (
         <div className={"liste_tweets"}>

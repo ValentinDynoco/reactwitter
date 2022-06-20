@@ -1,6 +1,7 @@
 import {useState} from "react";
 import {connect} from "react-redux";
 import {ajouterTweet} from "../../../redux/actionCreators/actionCreator";
+import axios from "axios";
 
 const ConnectedFormulaireNouveauTweet = ({ tweets, ajouterTweet }) => {
     // On initialise la variable du tweet et de son setter
@@ -13,16 +14,19 @@ const ConnectedFormulaireNouveauTweet = ({ tweets, ajouterTweet }) => {
 
     // Quand on clique sur Tweeter, ça envoie à redux le nouveau tweet à ajouter
     const handleClick = () => {
-        console.log('click')
-        console.log(tweet)
-        let newTweet = {
-            id : tweets.length,
-            commentaire : tweet,
-            date : new Date(),
-            likes : 0
-        }
-        ajouterTweet(newTweet)
-        setTweet('');
+        // https://randomuser.me/api/
+        axios.get('https://randomuser.me/api/').then(response => {
+            let newTweet = {
+                id : tweets.length,
+                userName : response.data.results[0].name.first + ' ' + response.data.results[0].name.last,
+                userAt : (response.data.results[0].name.first + response.data.results[0].name.last).toLowerCase(),
+                commentaire : tweet,
+                date : new Date(),
+                likes : 0
+            }
+            ajouterTweet(newTweet)
+            setTweet('');
+        }).catch(error => console.log(error))
     }
 
     return (
