@@ -1,0 +1,42 @@
+.sidebar {
+  border-right: 0.1px solid rgba(255,255,255,0.25);
+  min-height: 100vh;
+  font-family: BlinkMacSystemFont, sans-serif;
+
+  .img_sidebar {
+    img {
+      height: 3rem;
+      margin-top: 5px;
+    }
+  }
+
+  .liste_options {
+    margin-top : 20px;
+
+    .accueil {
+      display : flex;
+      align-items: center;
+      cursor : pointer;
+      width: fit-content;
+      padding: 0.6em 40px 0.6em 0.6em;
+      max-width: 100%;
+
+      &:hover {
+        background-color : #222727;
+        border-radius : 30px;
+      }
+
+      .img_accueil {
+        img {
+          width : 30px;
+        }
+      }
+
+      .title_accueil{
+        margin-left : 25px;
+        font-size: 20px;
+        font-weight: bold;
+      }
+    }
+  }
+}

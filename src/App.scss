@@ -1,0 +1,21 @@
+body {
+  background-color : black;
+  color : white;
+}
+
+.App {
+  display: flex;
+
+  .sidebar {
+    margin-left: 17vw;
+    width: 15vw;
+  }
+
+  .tweets {
+    width : 31vw;
+  }
+
+  .tendances {
+    width : 20vw;
+  }
+}

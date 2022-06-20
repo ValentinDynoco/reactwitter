@@ -1,0 +1,41 @@
+.tendances {
+  border-left: 0.1px solid rgba(255,255,255,0.25) ;
+  min-height: 100vh;
+  padding-left: 20px;
+  font-family: BlinkMacSystemFont, sans-serif;
+
+  .title_tendances {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom : 5px;
+    margin-top : 20px;
+  }
+
+  ul {
+    background-color : #181c1c;
+    border-radius : 5px;
+    margin: 0;
+    padding: 0;
+
+    li {
+      list-style-type: none;
+      padding : 1em;
+      cursor: pointer;
+
+      .name_tendance {
+        font-weight: bold;
+        font-size: 15px;
+      }
+
+      .nb_tweets {
+        font-size: 13px;
+        font-weight: lighter;
+        margin-top: 4px;
+      }
+
+      &:hover {
+        background-color : #222727;
+      }
+    }
+  }
+}

@@ -1,0 +1,62 @@
+.tweets {
+  font-family: BlinkMacSystemFont, sans-serif;
+}
+.tweets .title_accueil {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: bold;
+  margin-top: 12px;
+  margin-left: 10px;
+}
+.tweets .nouveau_tweet {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+.tweets .nouveau_tweet .textarea_new_tweet {
+  margin-left: 20px;
+  width: 91%;
+  margin-top: 25px;
+  background-color: black;
+  border: unset;
+  outline-color: black;
+  color: white;
+  font-size: 20px;
+  font-weight: lighter;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+.tweets .nouveau_tweet .textarea_new_tweet::placeholder {
+  color: white;
+  font-size: 20px;
+  font-weight: lighter;
+}
+.tweets .nouveau_tweet .textarea_new_tweet:focus {
+  outline: none;
+}
+.tweets .nouveau_tweet .btn_tweeter {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.tweets .nouveau_tweet .btn_tweeter button {
+  margin-right: 20px;
+  background-color: #1d9bf0;
+  padding: 0.6em 1.2em;
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
+  border: unset;
+  font-size: 15px;
+  cursor: pointer;
+}
+.tweets .nouveau_tweet .btn_tweeter button:disabled {
+  color: rgba(255, 255, 255, 0.5);
+  background-color: #156aa4;
+}
+.tweets .nouveau_tweet .btn_tweeter button:disabled:hover {
+  background-color: #156aa4;
+}
+.tweets .nouveau_tweet .btn_tweeter button:hover {
+  background-color: #1b91e1;
+}
+
+/*# sourceMappingURL=Tweets.css.map */
