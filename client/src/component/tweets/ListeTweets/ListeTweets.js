@@ -1,14 +1,22 @@
 import {connect} from "react-redux";
+import {getData} from "../../../redux/actionCreators/actionCreator";
+import {useEffect} from "react";
 
-const ConnectedListeTweets = ({ tweets }) => {
+const ConnectedListeTweets = ({ tweets, getData }) => {
+    useEffect(() => {
+        getData();
+    }, [getData]);
+
     // On trie la liste des tweets et crée une instance avec la nouvelle liste
     const sortedTweets = tweets.sort(function (a, b){
         return a.date < b.date;
     });
 
-    const listeTweets = sortedTweets.map((item, index) => {
-        let formatted_date = item.date.getDate() + "-" + (item.date.getMonth() + 1) + "-" + item.date.getFullYear()
 
+    const listeTweets = sortedTweets.map((item, index) => {
+        const dateWithFormat = new Date(item.date);
+
+        let formatted_date = dateWithFormat.getDate() + "-" + (dateWithFormat.getMonth() + 1) + "-" + dateWithFormat.getFullYear()
 
         return (
             <li key={item.id}>
@@ -50,6 +58,6 @@ const mapStateToProps = (state) => {
 }
 
 // On connecte le composant avec nos props et fonctions
-const ListeTweets = connect(mapStateToProps)(ConnectedListeTweets)
+const ListeTweets = connect(mapStateToProps, { getData })(ConnectedListeTweets)
 
 export default ListeTweets;

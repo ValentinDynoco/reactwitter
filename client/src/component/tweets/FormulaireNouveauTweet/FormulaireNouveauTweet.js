@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 import {ajouterTweet} from "../../../redux/actionCreators/actionCreator";
 import axios from "axios";
 
-const ConnectedFormulaireNouveauTweet = ({ tweets, ajouterTweet }) => {
+const ConnectedFormulaireNouveauTweet = ({ ajouterTweet }) => {
     // On initialise la variable du tweet et de son setter
     const [tweet, setTweet] = useState('');
 
@@ -17,13 +17,14 @@ const ConnectedFormulaireNouveauTweet = ({ tweets, ajouterTweet }) => {
         // https://randomuser.me/api/
         axios.get('https://randomuser.me/api/').then(response => {
             let newTweet = {
-                id : tweets.length,
                 userName : response.data.results[0].name.first + ' ' + response.data.results[0].name.last,
                 userAt : (response.data.results[0].name.first + response.data.results[0].name.last).toLowerCase(),
                 commentaire : tweet,
                 date : new Date(),
                 likes : 0
             }
+            console.log('new tweet init :')
+            console.log(newTweet)
             ajouterTweet(newTweet)
             setTweet('');
         }).catch(error => console.log(error))
@@ -41,21 +42,7 @@ const ConnectedFormulaireNouveauTweet = ({ tweets, ajouterTweet }) => {
     )
 }
 
-// On récupère la liste des tweets de redux
-const mapStateToProps = (state) => {
-    return {
-        tweets : state.tweets
-    }
-}
-
-// On récupère la fonction ajouterTweet de redux
-const mapDispatchToProps = (dispatch) => {
-    return {
-        ajouterTweet : (tweet) => dispatch(ajouterTweet(tweet))
-    }
-}
-
 // On connecte le composant avec nos props et fonctions
-const FormulaireNouveauTweet = connect(mapStateToProps, mapDispatchToProps)(ConnectedFormulaireNouveauTweet)
+const FormulaireNouveauTweet = connect(null, { ajouterTweet })(ConnectedFormulaireNouveauTweet)
 
 export default FormulaireNouveauTweet;
