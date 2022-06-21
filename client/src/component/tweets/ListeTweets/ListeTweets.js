@@ -28,13 +28,13 @@ const ConnectedListeTweets = ({ tweets, getData }) => {
                 </div>
                 <div className={'footer_tweet'}>
                     <div>
-                        commentaire 0
+                        <img src="/assets/chat.png" alt=""/> 0
                     </div>
                     <div>
-                        likes {item.likes}
+                        <img src="/assets/heart.png" alt=""/> {item.likes}
                     </div>
                     <div>
-                        retweet 0
+                        <img src="/assets/retweet.png" alt=""/> 0
                     </div>
                 </div>
             </li>

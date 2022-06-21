@@ -1,7 +1,5 @@
 // On créer la fonction d'ajouter un Tweet qu'on récupérer et appeler dans nos pages
 export function ajouterTweet (payload) {
-    console.log('action : ')
-    console.log(payload)
     return function(dispatch) {
         return fetch("/api/post_tweet", {
             method : "POST",

@@ -111,6 +111,13 @@
           div {
             font-weight: lighter;
             color : rgba(240, 240, 240, 0.5);
+            align-items: center;
+            display: flex;
+
+            img {
+              width : 20px;
+              margin-right: 5px;
+            }
           }
         }
       }

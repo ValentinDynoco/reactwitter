@@ -26,7 +26,6 @@ app.get('/api/get_tweets', (req, res) => {
 });
 
 app.post('/api/post_tweet', (req, res) => {
-    console.log(req.body);
     const dateWithFormat = new Date(req.body.date)
     db.sequelize.query('INSERT INTO tweets (userName, userAt, commentaire, date, likes) VALUES (:userName, :userAt, :commentaire, :date, :likes);',
         {
@@ -38,6 +37,8 @@ app.post('/api/post_tweet', (req, res) => {
                 likes : req.body.likes
             }, type : db.sequelize.QueryTypes.INSERT
         })
+
+    res.send({message : 'ok'});
 })
 
 app.post('/api/data', (req, res) => {

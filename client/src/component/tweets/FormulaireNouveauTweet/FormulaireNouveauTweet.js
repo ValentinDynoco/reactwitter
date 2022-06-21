@@ -23,8 +23,6 @@ const ConnectedFormulaireNouveauTweet = ({ ajouterTweet }) => {
                 date : new Date(),
                 likes : 0
             }
-            console.log('new tweet init :')
-            console.log(newTweet)
             ajouterTweet(newTweet)
             setTweet('');
         }).catch(error => console.log(error))

@@ -19,7 +19,7 @@ const rootReducer = (state = initialState, action) => {
 
         case 'POST_TWT' : // [{id : 1, userName : 'Tom Tim', userAt : 'tomtim', commentaire : 'text', date : 00/00/00, likes : 0}]
             return Object.assign({}, state, {
-                tweets: state.tweets.concat(action.payload)
+                tweets: [action.payload].concat(state.tweets)
             });
 
         // Le cas où on le supprime
